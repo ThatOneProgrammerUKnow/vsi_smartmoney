@@ -1,0 +1,15 @@
+body{
+    background: var(--base-background);
+    font-family: "sansation";
+    margin: 0;
+    padding: 0;
+}
+.text-bold{
+    font-weight: bold;
+}
+.text-center{
+    text-align: center;
+}
+.inline-block{
+    display: inline-block;
+}

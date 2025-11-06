@@ -1,0 +1,21 @@
+{% extends "page/base.html" %}
+{% block header %}
+<div class="top-container">
+    <header class="row header">
+        <h1>VSI Smart Money</h1>
+    </header>
+
+    <nav>
+        <ul class="nav-style-flex nav">
+            <li><a href="{% url 'vsi:dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'vsi:transaction' %}">Transactions</a></li>
+            <li><a href="{% url 'vsi:category' %}">Categories</a></li>
+        </ul>
+    </nav>
+
+    <div class="nav-style-flex row actions">
+        <a href="{% url 'vsi:add_transaction' %}" class="btn btn-primary">Add transaction</a>
+        <a href="{% url 'vsi:add_category' %}" class="btn btn-primary">Add category</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "page/navbar.html" %}
+{% block content %}
+<section class="form-container">
+    <form method="POST" class="island">
+        <h2>{{heading}}</h2>
+        {% csrf_token %}
+        {{ form }}
+        <div>
+            <input class="btn btn-secondary text-bold" type="submit" value="Add">
+        </div>
+    </form>
+</section>
+{% endblock %}

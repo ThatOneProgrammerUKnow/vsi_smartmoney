@@ -1,0 +1,99 @@
+.btn{
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;  
+
+    color: var(--content-text-dark);
+    font-size: 16px;
+}
+.btn:hover{
+    translate: 0 -2px;
+    cursor: pointer;
+}  
+.btn-primary{
+    background: var(--primary-content-color);
+    box-shadow: 1px 1px 2px 2px var(--secondary-content-shadow);
+    color: var(--content-text-dark);
+}
+.btn-primary:hover{
+    background: var(--primary-content-accent);
+}
+
+.btn-secondary{
+    background: var(--secondary-content-color);
+    box-shadow: 1px 1px 2px 2px var(--secondary-content-shadow);
+    color: var(--content-text-dark);
+}
+.btn-secondary:hover{
+    background: var(--secondary-content-accent);
+}
+
+
+/*|=====| Custom elements|=====|*/
+
+/* Island */
+.island{
+    margin: 50px;
+    overflow: hidden;
+    background: var(--content-bg-mid);
+    border-radius: 30px;
+    box-shadow: 0 0 3px 3px var(--primary-content-shadow);
+    min-width: 20vw;
+
+}
+
+/* Table */
+table{
+    width: 100%;
+    color: var(--content-text-light);
+    border-collapse: collapse;
+    margin: 0;
+}
+th{
+    border-bottom: 2px solid var(--primary-content-dark);
+    padding: 15px;
+    background: var(--content-bg-dark)
+}
+td{
+    text-align: center;
+    padding: 15px;
+}
+
+
+/* Forms */
+h2{
+    text-align: center;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+}
+form{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    color: var(--content-text-light);
+}
+form div{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+}
+form div label{
+    text-align: center;
+}
+
+form div > *:not(label){
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+}
+form div>*:not(label):hover, 
+form div>*:not(label):focus{
+    border: none;
+    outline: none;
+    background: var(--base-background);
+}

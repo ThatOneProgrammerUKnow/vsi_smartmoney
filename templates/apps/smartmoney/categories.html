@@ -1,0 +1,21 @@
+{% extends "page/navbar.html" %}
+{%  block content %}
+<section class="text-center">
+    <div class="island inline-block">
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for category in categories %}
+                <tr>
+                    <td>{{category.category}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}
