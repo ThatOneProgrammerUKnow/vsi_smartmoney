@@ -109,18 +109,18 @@ form {
 }
 
 
-input, select, textarea {
+input:not([type="submit"]), select, textarea {
     border-radius: 5px;
     background: var(--color-gray-100);
     color: var(--primary-text-dark);
 }
 
-form div>textarea:hover, 
-form div>input:hover, 
-form div>select:hover, 
-form div>textarea:focus, 
-form div>input:focus, 
-form div>select:focus{
+form textarea:hover, 
+form input:not([type="submit"]):hover, 
+form select:hover, 
+form textarea:focus, 
+form input:focus, 
+form select:focus{
     border: none;
     outline: none;
     background: var(--color-gray-200);
@@ -136,12 +136,34 @@ form .helptext{
 
 
 form .error-message, .error{
-    color: var(--color-red-500);
+    color: white;
 }
 
 form .error-message{
     font-size: 18px;
     text-align: center;
     font-weight: bold;
+}
+
+/* a Tags */
+span a{
+    color: white;
+    text-decoration: none;
+}
+span a:hover{
+    text-decoration: underline;
+    color: var(--color-gray-100);
+}
+form p{
+    text-align:center;
+    color: black;
+}
+form a{
+    color: var(--color-gray-100);
+}
+form a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--color-gray-100);
 }
 

@@ -4,7 +4,7 @@ from . import views
 app_name = "vsi"
 
 urlpatterns = [
-    path("", views.dashboard, name="dashboard"),
+    path("dashboard", views.dashboard, name="dashboard"),
     path("categories/", views.category, name="category"),
     path("transactions/", views.transaction, name="transaction"),
     

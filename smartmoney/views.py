@@ -7,14 +7,17 @@ from django.contrib.auth.decorators import login_required
 def dashboard(request):
     return render(request, 'apps/smartmoney/dashboard.html')
 
-# Displays transactions
+## Displays transactions ##
 def transaction(request):
-    transactions = Transaction.objects.filter()
-    context = {"transactions":transactions}
+    transactions = Transaction.objects.filter(category__user=request.user)
+    context = {
+        "transactions":transactions,
+        "user":request.user,
+        }
 
     return render(request, 'apps/smartmoney/transactions.html', context)
 
-# Displays categories
+## Displays categories ##
 def category(request):
     categories = Category.objects.filter(user = request.user, archived=False)
     context = {"categories":categories}
@@ -38,20 +41,21 @@ def add_category(request):
     context = {
         "form": form,
         "heading": "Add Category",
+        "user":request.user,
         "error_message": "Please correct the errors below" if form.errors else None
     }
     return render(request, "apps/smartmoney/forms.html", context)
 
 def add_transaction(request):
     if request.method == "POST":
-        form = TransactionForm(request.POST)
+        form = TransactionForm(request.POST, user=request.user)
         if form.is_valid():
             transaction = form.save(commit=False)
             # Add any additional processing here if needed
             transaction.save()
             return redirect("vsi:transaction")
     else:
-        form = TransactionForm()
+        form = TransactionForm(user=request.user)
     
     context = {
         "form": form,

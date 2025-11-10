@@ -12,10 +12,11 @@ class TransactionForm(ModelForm):
         model = Transaction
         fields = ["date", "category", "description", "amount", "type"]
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, user=None, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields['category'].queryset = Category.objects.filter(archived=False)
+        if user is not None:
+            self.fields['category'].queryset = Category.objects.filter(user=user, archived=False)
 
 
 

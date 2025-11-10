@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
 
+
+#===# Sign up view #===#
 def sign_up(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
@@ -16,18 +18,19 @@ def sign_up(request):
     
     context = {
         "form": form,
-        "submit": "Sign Up",
+        "menu_slug": "Sign Up",
         "error_message": "Please correct the errors below" if form.errors else None
     }
     return render(request, 'apps/acounts/forms.html', context)
 
+#===# Sign in view#===#
 def sign_in(request):
     # Show empty form on GET request
     if request.method == "GET":
         form = AuthenticationForm()
         context = {
             "form": form,
-            "submit": "Sign In"
+            "menu_slug": "Sign In"
         }
         return render(request, "apps/acounts/forms.html", context)
     
@@ -48,8 +51,18 @@ def sign_in(request):
         # If form is invalid or authentication failed
         context = {
             "form": form,
-            "submit": "Sign In",
+            "menu_slug": "Sign In",
             "error_message": "Invalid username or password"
         }
         return render(request, "apps/acounts/forms.html", context)
     
+#===# Other views #===#
+def signed_in(request):
+    if request.user.is_authenticated:
+        return redirect("vsi:dashboard")
+    else:
+        return redirect("acounts:sign_in")
+    
+def sign_out(request):
+    logout(request)
+    return redirect("acounts:sign_in")

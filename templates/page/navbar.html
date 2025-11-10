@@ -2,7 +2,11 @@
 {% block header %}
 <div class="top-container">
     <header class="row header">
-        <h1>VSI Smart Money</h1>
+        <div>
+            <span class="username">Welcome {{user}}!</span>
+            <h1>VSI Smart Money</h1>
+            <span class="logout"><a href="{% url 'acounts:sign_out' %}">Log Out</a></span>
+        </div>
     </header>
 
     <nav>

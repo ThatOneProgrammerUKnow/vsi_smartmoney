@@ -14,15 +14,33 @@
 }
 
 /* Header styling */
-h1{
-    text-align: center;
-    margin: 0;
-}
 
 .header{
     background: var(--color-sky-950);
     color: var(--color-sky-100);
-    border-bottom: 4px solid var(--color-gray-950)
+    border-bottom: 4px solid var(--color-gray-950);
+    padding: 40px 0;
+}
+
+.header div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+}
+h1{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+.username{
+    margin-left: 50px;
+}
+.logout{
+    margin-right: 50px;
 }
 
 /* Navbar styling */
