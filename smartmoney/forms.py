@@ -12,6 +12,11 @@ class TransactionForm(ModelForm):
         model = Transaction
         fields = ["date", "category", "description", "amount", "type"]
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['category'].queryset = Category.objects.filter(is_archived=False)
+
 
 
 

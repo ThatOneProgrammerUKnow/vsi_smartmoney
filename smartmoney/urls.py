@@ -5,8 +5,15 @@ app_name = "vsi"
 
 urlpatterns = [
     path("", views.dashboard, name="dashboard"),
-    path("transactions", views.transaction, name="transaction"),
-    path("categories", views.category, name="category"),
-    path("add_category", views.add_category, name="add_category"),
-    path("add_transaction", views.add_transaction, name="add_transaction"),
+    path("categories/", views.category, name="category"),
+    path("transactions/", views.transaction, name="transaction"),
+    
+
+    # Creating objects
+    path("add_category/", views.add_category, name="add_category"),
+    path("add_transaction/", views.add_transaction, name="add_transaction"),
+
+    # Deleting objects
+    path("category/<int:pk>/archive", views.archive_category, name="archive_category"),
+    path("transaction/<int:pk>/delete", views.delete_transaction, name="delete_transaction"),    
 ]

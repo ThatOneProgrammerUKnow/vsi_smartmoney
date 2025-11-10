@@ -1,21 +1,22 @@
 from django.shortcuts import render, redirect
 from .forms import CategoryForm, TransactionForm
 from .models import Category, Transaction
+from django.contrib.auth.decorators import login_required
 
 #===# Switch between pages #===#
 def dashboard(request):
     return render(request, 'apps/smartmoney/dashboard.html')
 
+# Displays transactions
 def transaction(request):
-    transactions = Transaction.objects.all()
+    transactions = Transaction.objects.filter()
     context = {"transactions":transactions}
-    
 
     return render(request, 'apps/smartmoney/transactions.html', context)
 
-
+# Displays categories
 def category(request):
-    categories = Category.objects.all()
+    categories = Category.objects.filter(user = request.user, archived=False)
     context = {"categories":categories}
 
     return render(request, 'apps/smartmoney/categories.html', context)
@@ -26,33 +27,51 @@ def category(request):
 def add_category(request):
     if request.method == "POST":
         form = CategoryForm(request.POST)
-
         if form.is_valid():
-            form.save()
-
+            category = form.save(commit=False)
+            category.user = request.user
+            category.save()
             return redirect("vsi:category")
     else:
         form = CategoryForm()
-        context = {"form":form, "heading":"Add Category"}
     
-
+    context = {
+        "form": form,
+        "heading": "Add Category",
+        "error_message": "Please correct the errors below" if form.errors else None
+    }
     return render(request, "apps/smartmoney/forms.html", context)
 
 def add_transaction(request):
     if request.method == "POST":
         form = TransactionForm(request.POST)
-
         if form.is_valid():
-            form.save()
-
+            transaction = form.save(commit=False)
+            # Add any additional processing here if needed
+            transaction.save()
             return redirect("vsi:transaction")
-    
     else:
         form = TransactionForm()
-
-        context = {"form": form, "heading":"Add Transaction"}
-
+    
+    context = {
+        "form": form,
+        "heading": "Add Transaction",
+        "error_message": "Please correct the errors below" if form.errors else None
+    }
     return render(request, "apps/smartmoney/forms.html", context)
 
 
+def archive_category(request, pk):
+    object_to_archive = Category.objects.get(pk=pk)
+    object_to_archive.archived = True
+    object_to_archive.save()
+    
+    return redirect("vsi:category")
+
+def delete_transaction(request, pk):
+    object_to_delete = Transaction.objects.get(pk=pk)
+    object_to_delete.delete()
+
+    return redirect("vsi:transaction")
+        
 

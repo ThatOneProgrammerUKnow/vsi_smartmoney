@@ -6,12 +6,19 @@
             <thead>
                 <tr>
                     <th>Category</th>
+                    <th>Archive</th>
                 </tr>
             </thead>
             <tbody>
                 {% for category in categories %}
                 <tr>
                     <td>{{category.category}}</td>
+                    <td>
+                        <form action="{% url 'vsi:archive_category' category.id %}" method="POST">
+                            {% csrf_token %}
+                            <input class="btn btn-secondary text-bold" type="submit" value="Archive">
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
