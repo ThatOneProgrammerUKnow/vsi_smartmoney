@@ -1,8 +1,17 @@
-:root{
-/* Errors */
-    --error-message: black;
+:root {
+/* Shadows */
+  --shadow-sky-5: oklch(0.302 0.056 229.695/0.25);
+  --shadow-sky-25: oklch(0.302 0.056 229.695/0.25);
 
-/* Colors */
+  --shadow-teal-5: oklch(0.277 0.046 192.524 / 0.5);
+  --shadow-teal-25: oklch(0.277 0.046 192.524 / 0.25);
+
+  --primary-text-light: var(--color-teal-100);
+  --primary-text-dark: var(--color-teal-950);
+
+
+  --primary-bg1: var(--color-gray-100);
+
 
   --color-red-50: oklch(0.971 0.013 17.38);
   --color-red-100: oklch(0.936 0.032 17.717);

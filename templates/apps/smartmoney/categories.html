@@ -1,6 +1,6 @@
 {% extends "page/navbar.html" %}
 {%  block content %}
-<section class="text-center">
+<section >
     <div class="island inline-block">
         <table>
             <thead>
@@ -16,7 +16,7 @@
                     <td>
                         <form action="{% url 'vsi:archive_category' category.id %}" method="POST">
                             {% csrf_token %}
-                            <input class="btn btn-secondary text-bold" type="submit" value="Archive">
+                            <input class="btn btn-secondary" type="submit" value="Archive">
                         </form>
                     </td>
                 </tr>
