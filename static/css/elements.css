@@ -36,10 +36,11 @@
 .island{
     margin: 25px auto;
     overflow: hidden;
-    background: var(--color-sky-600);
+    background: var(--color-gray-100);
     border-radius: 30px;
     box-shadow: 0 0 3px 3px var(--shadow-sky-25);
-    min-width: 20vw;
+    min-width: 30vw;
+    min-height: 50vh;
     width: fit-content;
 }
 
@@ -76,6 +77,8 @@ h2{
 .form-container{
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 form{
     width: fit-content;
@@ -111,8 +114,16 @@ form {
 
 input:not([type="submit"]), select, textarea {
     border-radius: 5px;
-    background: var(--color-gray-100);
+    background: var(--primary-form-inputs);
     color: var(--primary-text-dark);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    background-color: var(--primary-form-inputs-hover) !important;
+    -webkit-box-shadow: 0 0 0px 1000px var(--primary-form-inputs-hover) inset !important;
+    -webkit-text-fill-color: var(--primary-text-dark) !important;
 }
 
 form textarea:hover, 
@@ -123,7 +134,7 @@ form input:focus,
 form select:focus{
     border: none;
     outline: none;
-    background: var(--color-gray-200);
+    background-color: var(--primary-form-inputs-hover);
 }
 
 form label{
@@ -160,6 +171,7 @@ form p{
 }
 form a{
     color: var(--color-gray-100);
+    text-decoration: none;
 }
 form a:hover{
     cursor: pointer;

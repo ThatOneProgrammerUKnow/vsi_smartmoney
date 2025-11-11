@@ -8,9 +8,15 @@
 
   --primary-text-light: var(--color-teal-100);
   --primary-text-dark: var(--color-teal-950);
+  --primary-form-inputs: var(--color-sky-200);
+  --primary-form-inputs-hover: var(--color-sky-300);
+
+  --btn-primary: var(--color-sky-500);
+  --button-secondary: var(--color-sky-500);
+
+  --primary-bg1: var(--color-sky-500);
 
 
-  --primary-bg1: var(--color-gray-100);
 
 
   --color-red-50: oklch(0.971 0.013 17.38);

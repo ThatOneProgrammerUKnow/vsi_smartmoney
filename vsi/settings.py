@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env(
     DEBUG=(bool, False)
 )
-
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 
 
@@ -85,9 +85,21 @@ WSGI_APPLICATION = 'vsi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-        "default":env.db(),
-}
+if DEBUG:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": env("DATABASE_NAME"),
+            "USER": env("DATABASE_USER"),
+            "PASSWORD": env("DATABASE_PASSWORD"),
+            "HOST": env("HOST"),
+            "PORT": env("PORT"),
+        }
+    }
+else:
+    DATABASES = {
+            "default":env.db(),
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
