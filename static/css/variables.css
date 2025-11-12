@@ -7,8 +7,8 @@
   --secondary-shadow-25: rgb(0, 88, 6, 0.25);
 
 
-  --primary-color : #ffffff;
-  --primary-color-hover : #005806;
+  --primary-color : #005806;
+  --primary-color-hover : #005205;
   --primary-shadow: rgb(0, 88, 6);
 
 
@@ -38,4 +38,4 @@
   /* Gradients */
   --grdient-1: #3cb144;
   --gradient-2: #006407;
-
+}

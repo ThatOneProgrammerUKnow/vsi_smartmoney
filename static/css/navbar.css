@@ -66,20 +66,20 @@ nav li{
 }
 
 nav a{
-    background: var(--color-sky-700);
+    background: var(--primary-color);
     text-decoration: none;
-    color: var(--primary-text-light);
+    color: var(--secondary-light-text);
     padding: 20px;
     display: block;
 }
 nav a:hover{
-    background: var(--color-sky-800);
+    background: var(--primary-color-hover);
 
 }
 
 /* Actions styling */
 .actions{
-    background: var(--color-sky-700);
+    background: var(--primary-color);
     box-shadow: 0 1px 2px 2px var(--shadow-sky-5);
     color: var(--primary-text-light);
         border-bottom: 2px solid var(--color-sky-800);
