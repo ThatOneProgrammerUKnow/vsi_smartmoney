@@ -9,6 +9,7 @@
 .btn:hover{
     cursor: pointer;
 }  
+
 .btn-primary{
     background: var(--color-teal-500);
     box-shadow: 1px 1px 2px 2px var(--shadow-sky-25);
@@ -32,18 +33,6 @@
 
 /*|=====| Custom elements|=====|*/
 
-/* Island */
-.island{
-    margin: 25px auto;
-    overflow: hidden;
-    background: var(--color-gray-100);
-    border-radius: 30px;
-    box-shadow: 0 0 3px 3px var(--shadow-sky-25);
-    min-width: 30vw;
-    min-height: 50vh;
-    width: fit-content;
-}
-
 /* Table */
 table{
     width: 100%;
@@ -66,116 +55,3 @@ td form{
     align-items: center;
     justify-content: center;
 }
-
-
-/* Forms */
-h2{
-    text-align: center;
-    margin: 5px;
-}
-
-.form-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-form{
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    color: var(--primary-text-dark);
-    padding: 10px;
-}
-form div{
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-}
-form div >*{
-    margin-bottom: 10px;
-}
-form div label{
-    text-align: center;
-}
-
-form div > *:not(label){
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    border: none;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-
-input:not([type="submit"]), select, textarea {
-    border-radius: 5px;
-    background: var(--primary-form-inputs);
-    color: var(--primary-text-dark);
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-    background-color: var(--primary-form-inputs-hover) !important;
-    -webkit-box-shadow: 0 0 0px 1000px var(--primary-form-inputs-hover) inset !important;
-    -webkit-text-fill-color: var(--primary-text-dark) !important;
-}
-
-form textarea:hover, 
-form input:not([type="submit"]):hover, 
-form select:hover, 
-form textarea:focus, 
-form input:focus, 
-form select:focus{
-    border: none;
-    outline: none;
-    background-color: var(--primary-form-inputs-hover);
-}
-
-form label{
-    font-size: 18px;
-    font-weight: bold;
-}
-form .helptext{
-    font-size: 14px;
-}
-
-
-form .error-message, .error{
-    color: white;
-}
-
-form .error-message{
-    font-size: 18px;
-    text-align: center;
-    font-weight: bold;
-}
-
-/* a Tags */
-span a{
-    color: white;
-    text-decoration: none;
-}
-span a:hover{
-    text-decoration: underline;
-    color: var(--color-gray-100);
-}
-form p{
-    text-align:center;
-    color: black;
-}
-form a{
-    color: var(--color-gray-100);
-    text-decoration: none;
-}
-form a:hover{
-    cursor: pointer;
-    text-decoration: underline;
-    color: var(--color-gray-100);
-}
-

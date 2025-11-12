@@ -10,3 +10,11 @@
     font-weight: bold;
     font-style: normal;
 }
+@font-face{
+    font-family: "sanscode";
+    src: url("../fonts/sanscode/GoogleSansCode-VariableFont_wght.ttf");
+    font-weight: 100 900;
+    font-stretch: 75% 125%;
+    font-display: swap;
+    font-style: normal;
+}

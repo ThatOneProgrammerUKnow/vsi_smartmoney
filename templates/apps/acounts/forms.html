@@ -1,9 +1,22 @@
 {% extends "page/base.html" %}
 {% block content %}
-<section class="form-container">
-    <form method="POST" class="island">
+<section class="container">
+    <div class="form-info-container">
+        <div class="form-info">
+            <h1 class="market-heading">Know your money</h1>
+                <div class="quotes">
+                <p>
+                    "A budget is telling your money where to go instead of wondering where it went" - Dave Ramsey
+                </p>
+                <p>
+                    "A budget doesn't limit your freedom. It gives you freedom" - Rachel Cruze
+                </p>
+                </div>
+        </div>   
+    </div>
+    <form method="POST" class="form">
         {% csrf_token %}
-
+        <h1>{{menu_slug}}</h1>
         {% if error_message %}
         <div class="error-message">
             {{ error_message }}
@@ -33,10 +46,12 @@
         {% endfor %}
 
         <div>
-            <input class="btn btn-secondary" type="submit" value="{{menu_slug}}">
+            <input class="btn btn-form" type="submit" value="{{menu_slug}}">
         </div>
         {% if menu_slug == 'Sign In' %}
-        <p>Dont have an account - <a href="{% url 'acounts:sign_up' %}">Sign up!</a></p>
+        <p class="info">Dont have an account?&nbsp;&nbsp;<a href="{% url 'acounts:sign_up' %}">Sign up!</a></p>
+        {% else %}
+        <p class="info">Already have an account?&nbsp;&nbsp;<a href="{% url 'acounts:sign_in' %}">Sign in!</a></p>
         {% endif %}
     </form>
 </section>
