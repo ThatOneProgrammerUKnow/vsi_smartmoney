@@ -4,15 +4,16 @@
     <div class="form-info-container">
         <div class="form-info">
             <h1 class="market-heading">Know your money</h1>
-                <div class="quotes">
-                <p>
-                    "A budget is telling your money where to go instead of wondering where it went" - Dave Ramsey
-                </p>
-                <p>
-                    "A budget doesn't limit your freedom. It gives you freedom" - Rachel Cruze
-                </p>
-                </div>
+            <p>
+                "A budget is telling your money where to go instead of wondering where it went" - Dave Ramsey
+            </p>
+            <ul>
+                <li>Add Categories</li>
+                <li>Record Transactions</li>
+                <li>Keep a Budget</li>
+            </ul>
         </div>   
+  
     </div>
     <form method="POST" class="form">
         {% csrf_token %}
@@ -46,7 +47,7 @@
         {% endfor %}
 
         <div>
-            <input class="btn btn-form" type="submit" value="{{menu_slug}}">
+            <input class="btn btn-accent" type="submit" value="{{menu_slug}}">
         </div>
         {% if menu_slug == 'Sign In' %}
         <p class="info">Dont have an account?&nbsp;&nbsp;<a href="{% url 'acounts:sign_up' %}">Sign up!</a></p>

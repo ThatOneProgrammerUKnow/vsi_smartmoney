@@ -2,18 +2,18 @@
     height: 100dvh;
     width: 100vw;
     display: grid;
-    grid-template-columns: 1fr 30vw 200px;
+    grid-template-columns: 1fr 35vw 200px;
     grid-template-rows: 1fr;
-    background: linear-gradient(to bottom right, var(--grdient-1), var(--gradient-2));
+    background: var(--primary-gradient);
     align-items: stretch;
     box-sizing: border-box;
 }
 .form{
-    background: var(--secondary-color);
+    background: var(--color-secondary-100);
+    color: var(--color-primary-700);
     padding: 40px;
     height: 100%;
     text-align: center;
-    color: var(--secondary-dark-text);
     box-sizing: border-box;
 
     box-shadow: 0 0 5px 5px var(--secondary-shadow-25);
@@ -41,7 +41,7 @@
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px var(--secondary-input) inset !important;
+  -webkit-box-shadow: 0 0 0 1000px var(--color-secondary-200) inset !important;
   -webkit-text-fill-color: var(--text-color) !important;
 }
 
@@ -51,8 +51,8 @@ select:-webkit-autofill:focus,
 input:-webkit-autofill:hover,
 textarea:-webkit-autofill:hover,
 select:-webkit-autofill:hover{
-  -webkit-box-shadow: 0 0 0 1000px var(--secondary-input-hover) inset !important;
-  -webkit-text-fill-color: var(--text-color) !important;
+  -webkit-box-shadow: 0 0 0 1000px var(--color-secondary-300) inset !important;
+  -webkit-text-fill-color: var(--color-black) !important;
 }
 
 
@@ -62,13 +62,13 @@ select:-webkit-autofill:hover{
     border: none;
     padding: 5px;
     border-radius: 5px;
-    background: var(--secondary-input);
+    background: var(--color-secondary-200);
 }
 .form input:not([type="submit"]):hover,
 .form input:focus{
     outline: none;
     border: none;
-    background: var(--secondary-input-hover);
+    background: var(--color-secondary-300);
 }
 
 /*===| Buttons |===*/
@@ -96,17 +96,18 @@ select:-webkit-autofill:hover{
     font-size: 3em;
     margin: 0;
 }
+
 .form .error,
 .form .error-message{
     color: var(--error-text);
     font-size: 1.1em;
 }
 .form .info{
-    color: var(--primary-dark-text);
+    color: var(--color-black);
 }
 .form a{
     text-decoration: none;
-    color: var(--accent-color);
+    color: var(--color-accent-500);
 }
 .form a:hover{
     text-decoration: underline;
@@ -117,19 +118,25 @@ select:-webkit-autofill:hover{
     box-sizing: border-box;
 }
 .form-info{
-    height: 100%;
     box-sizing: border-box;
     text-align: center;
     font-family: "sanscode";
-    color: var(--primary-dark-text);
-}
+    color: var(--color-secondary-200);
 
-.quotes{
+    height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 80%;
+    justify-content: center;
+    align-items: center;
 }
+.form-info ul{
+    display: flex;
+    flex-direction: row;
+}
+.form-info ul li{
+    margin-left: 50px;
+}
+
 /* Text styling */
 
 .form-info h1{
@@ -142,6 +149,9 @@ select:-webkit-autofill:hover{
 
 .form-info p{
     font-size: 1.8em;
+}
+.form-info li{
+    font-size: 1em;
 }
 
 

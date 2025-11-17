@@ -29,7 +29,7 @@
                         <td> 
                             <form action="{% url 'vsi:delete_transaction' transaction.id %}" method="POST">
                                 {% csrf_token %}
-                                <input class="btn btn-secondary text-bold" type="submit" value="Delete">
+                                <input class="btn btn-ghost text-bold" type="submit" value="Delete">
                             </form>
                         </td>
                     </tr>        

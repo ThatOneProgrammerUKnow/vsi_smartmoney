@@ -1,25 +1,25 @@
 {% extends "page/base.html" %}
 {% block header %}
-<div class="top-container">
-    <header class="row header">
+<header>
+    <div class="heading">
         <div>
             <span class="username">Welcome {{user}}!</span>
             <h1>VSI Smart Money</h1>
             <span class="logout"><a href="{% url 'acounts:sign_out' %}">Log Out</a></span>
         </div>
-    </header>
+    </div>
 
     <nav>
-        <ul class="nav-style-flex nav">
+        <ul class="">
             <li><a href="{% url 'vsi:dashboard' %}">Dashboard</a></li>
             <li><a href="{% url 'vsi:transaction' %}">Transactions</a></li>
             <li><a href="{% url 'vsi:category' %}">Categories</a></li>
         </ul>
     </nav>
 
-    <div class="nav-style-flex row actions">
-        <a href="{% url 'vsi:add_transaction' %}" class="btn btn-primary ">Add transaction</a>
-        <a href="{% url 'vsi:add_category' %}" class="btn btn-primary">Add category</a>
-    </div>
-</div>
+    <section class="">
+        <a href="{% url 'vsi:add_transaction' %}" class="btn btn-accent">Add transaction</a>
+        <a href="{% url 'vsi:add_category' %}" class="btn btn-accent">Add category</a>
+    </section>
+</header>
 {% endblock %}
